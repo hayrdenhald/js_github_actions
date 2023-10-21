@@ -1,5 +1,5 @@
 import * as FM from "./FM.js";
-import * as Logger from "./logger.js";
+import * as LG from "./LG.js";
 
 const outputPath = "./index.html";
 const inputPath = "./input.md";
@@ -35,11 +35,11 @@ async function setHtmlContent(content) {
 
   if (!success) {
     const errorMessage = "Failed to write HTML to file!";
-    Logger.log(errorMessage);
+    LG.log(errorMessage);
     console.error(errorMessage);
   } else {
     const logMessage = `Wrote ${input} to ${outputPath}.`;
-    Logger.log(logMessage);
+    LG.log(logMessage);
     console.log(logMessage);
   }
 
