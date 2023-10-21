@@ -9,27 +9,34 @@ async function setHtmlContent(content) {
   const html = `
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello, World</title>
-  </head>
 
-  <body>
-    ${content}
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello, World</title>
+</head>
 
-</html>`.trim();
+<body>
+  ${content}
+</body>
+
+</html>
+`.trim();
 
   const success = await FM.write(outputPath, html);
 
   return success;
 }
 
+(async function main() {
+  const input = await FM.read(inputPath);
 
-let success = await setHtmlContent("<h1>oh lord</h1>");
-if (!success) {
-  const errorMessage = "Failed to write HTML to file.";
-  Logger.log(errorMessage);
-  console.error(errorMessage);
-}
+  let success = await setHtmlContent(input);
+
+  if (!success) {
+    const errorMessage = "Failed to write HTML to file.";
+    Logger.log(errorMessage);
+    console.error(errorMessage);
+  }
+
+})();
