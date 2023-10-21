@@ -1,1 +1,1 @@
-bachelor party
+sweden's champions

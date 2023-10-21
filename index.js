@@ -34,9 +34,13 @@ async function setHtmlContent(content) {
   let success = await setHtmlContent(input);
 
   if (!success) {
-    const errorMessage = "Failed to write HTML to file.";
+    const errorMessage = "Failed to write HTML to file!";
     Logger.log(errorMessage);
     console.error(errorMessage);
+  } else {
+    const logMessage = `Wrote ${input} to ${outputPath}.`;
+    Logger.log(logMessage);
+    console.log(logMessage);
   }
 
 })();
