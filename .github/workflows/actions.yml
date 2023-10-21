@@ -46,6 +46,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
   deploy:
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
