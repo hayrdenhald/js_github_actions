@@ -1,4 +1,4 @@
-  name: Build
+  name: build
 
   on:
     # Runs on pushes targeting the default branch

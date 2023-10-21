@@ -1,1 +1,1 @@
-fishing on friday
+running on tuesday
