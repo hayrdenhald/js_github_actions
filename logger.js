@@ -3,7 +3,7 @@ import * as FM from "./FM.js";
 
 const testFilePath = "./log.txt";
 
-export default async function log(content) {
+async function log(content) {
   const timestamp = new Date().toLocaleString({ year: '2-digit', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' });
 
   const success = await FM.append(testFilePath, `[ ${timestamp} ]: ${content}\n`);
