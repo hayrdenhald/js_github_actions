@@ -28,17 +28,31 @@ async function setHtmlContent(content) {
   return success;
 }
 
-(async function main() {
-  const input = await FM.read(inputPath);
+function generateLinksToNotes(titleAndPathForNotes) {
+  return titleAndPathForNotes.map(x => `<a href="${x.path}" >${x.title}</a>`);
+}
 
-  let success = await setHtmlContent(input);
+(async function main() {
+  const dummyTitleAndPathForNotes = [
+    { title: "how to write assembly in Python", path: "./notes/python/" },
+    { title: "how to create Python virtual environment", path: "./notes/python/" },
+    { title: "spinning up a MongoDB container in Docker", path: "./notes/python/" },
+  ];
+
+  const noteLinks = generateLinksToNotes(dummyTitleAndPathForNotes);
+  // const input = await FM.read(inputPath);
+
+
+  // let success = await setHtmlContent(input);
+  let success = await setHtmlContent(noteLinks.join("\n"));
 
   if (!success) {
     const errorMessage = "Failed to write HTML to file!";
     LG.log(errorMessage);
     console.error(errorMessage);
   } else {
-    const logMessage = `Wrote ${input} to ${outputPath}.`;
+    // const logMessage = `Wrote ${input} to ${outputPath}.`;
+    const logMessage = `Wrote ${noteLinks} to ${outputPath}.`;
     LG.log(logMessage);
     console.log(logMessage);
   }

@@ -1,3 +1,4 @@
 [ 10/21/2023, 4:34:51 PM ]: Wrote sweden's champions to ./index.html.
 [ 10/21/2023, 4:49:09 PM ]: Wrote fishing on friday to ./index.html.
 [ 10/21/2023, 4:53:15 PM ]: Wrote running on tuesday to ./index.html.
+[ 21/10/2023, 19:09:36 ]: Wrote <a href="./notes/python/" >how to write assembly in Python</a>,<a href="./notes/python/" >how to create Python virtual environment</a>,<a href="./notes/python/" >spinning up a MongoDB container in Docker</a> to ./index.html.
