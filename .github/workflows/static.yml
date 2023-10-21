@@ -24,12 +24,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-
       - uses: actions/checkout@v4
       - name: build and checkout repo content
         uses: actions/setup-node@v3
         with:
-          node-version: '18.18'
+          node-version: '20.x'
 
       - name: execute js script
         run: node index.js
